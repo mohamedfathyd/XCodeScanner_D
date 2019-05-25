@@ -8,12 +8,12 @@
 
     <include layout="@layout/layout_toolbar" />
 
-    <cn.simonlee.xcodescanner.view.MaskConstraintLayout
+    <cn.dalelegamalek.xcodescanner.view.MaskConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:frame_viewid="@id/scannerframe">
 
-        <cn.simonlee.xcodescanner.view.AdjustTextureView
+        <cn.dalelegamalek.xcodescanner.view.AdjustTextureView
             android:id="@+id/textureview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <cn.simonlee.xcodescanner.view.ScannerFrameView
+        <cn.dalelegamalek.xcodescanner.view.ScannerFrameView
             android:id="@+id/scannerframe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/gray_translucent"
             android:padding="5dp"
-            android:text="@string/tips_scan"
+            android:text="scan here "
             android:textColor="@color/gray_light_lv5"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -52,11 +52,11 @@
             android:id="@+id/btn_flash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/flash_open"
+            android:text="open flash"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/scannerframe"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
-    </cn.simonlee.xcodescanner.view.MaskConstraintLayout>
+    </cn.dalelegamalek.xcodescanner.view.MaskConstraintLayout>
 </LinearLayout>

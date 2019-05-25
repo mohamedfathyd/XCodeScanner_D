@@ -48,5 +48,65 @@
     <string name="codetype_qrcode">qrcode</string>
     <string name="codetype_upca">upca</string>
     <string name="codetype_upce">upce</string>
-
+    <string-array name="account_num">
+        <item>
+            عيادات أسنان
+           </item>
+        <item>
+            مركز العلاج الطبيعي
+           </item>
+        <item>
+           دورات تدريبية
+           </item>
+        <item>
+           مشاغل
+           </item>
+        <item>
+           سبا
+           </item>
+        <item>
+           هوايات شابة
+           </item>
+        <item>
+           الاميرة الصغيرة
+           </item>
+        <item>
+           ميكب أرتست
+           </item>
+        <item>
+           نوادي صحية
+           </item>
+        <item>
+           عيادات تغذية
+           </item>
+        <item>
+           دايت سنتر
+           </item>
+        <item>
+           عيادات جلدية وليزر
+           </item>
+    </string-array>
+    <string-array name="country_num">
+        <item>
+           السعودية
+           </item>
+        <item>
+          مصر
+           </item>
+        <item>
+           الأمارات
+           </item>
+        <item>
+           قطر
+           </item>
+        <item>
+           عمان
+           </item>
+        <item>
+          الكويت
+           </item>
+        <item>
+           البحرين
+           </item>
+    </string-array>
 </resources>

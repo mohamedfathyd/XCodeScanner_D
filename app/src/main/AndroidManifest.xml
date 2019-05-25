@@ -2,26 +2,47 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.simonlee.demo.xcodescanner">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
-        android:name=".APP"
+        android:name="cn.dalelegamalek.demo.xcodescanner.APP"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/BaseActivityTheme.TransparentWindow">
+        <activity android:name="cn.dalelegamalek.demo.Activity.Get_points"></activity>
+        <activity android:name="cn.dalelegamalek.demo.Activity.charge_Point" />
+        <activity android:name="cn.dalelegamalek.demo.Activity.AfterScan" />
+        <activity android:name="cn.dalelegamalek.demo.Activity.Update_order" />
+        <activity android:name="cn.dalelegamalek.demo.Activity.Delete_order" />
+        <activity android:name="cn.dalelegamalek.demo.Activity.Add_order" />
+        <activity android:name="cn.dalelegamalek.demo.Activity.SampleActivity" />
         <activity
-            android:name=".SplashActivity"
-            android:theme="@style/SplashActivityTheme">
+            android:name="cn.dalelegamalek.demo.Activity.RegestrationActivty"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="cn.dalelegamalek.demo.Activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="cn.dalelegamalek.demo.xcodescanner.SplashActivity"
+            android:theme="@style/SplashActivityTheme" />
+        <activity
+            android:name="cn.dalelegamalek.demo.xcodescanner.MainActivity"
             android:launchMode="singleTask"
             android:theme="@style/BaseActivityTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ScanActivity"
+            android:name="cn.dalelegamalek.demo.xcodescanner.ScanActivity"
             android:launchMode="singleTask"
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize" />

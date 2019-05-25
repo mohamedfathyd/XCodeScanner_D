@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/login_back"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Login_activity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تخطى"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+
+        android:layout_centerInParent="true"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_marginBottom="24dp"
+            android:id="@+id/image"
+            android:layout_gravity="center_horizontal" />
+
+        <!--  Email Label -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:padding="30dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/a"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="أسم المستخدم" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/a"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="كلمة المرور"/>
+        </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+
+            android:text="Login"/>
+
+        <TextView android:id="@+id/link_signup"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="لأنشاء حساب جديد ؟ أضغط هنا"
+            android:gravity="center"
+            android:background="@drawable/rounded_edittext_t"
+            android:textSize="16dip"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

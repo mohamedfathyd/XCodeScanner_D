@@ -53,102 +53,102 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp">
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_codabar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_codabar" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_code39"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_code39" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_code93"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_code93" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_code128"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_code128" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_databar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/codetype_databar" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_databar_exp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/codetype_databar_exp" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_ean8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_ean8" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_ean13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_ean13" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_i25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_i25" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_isbn10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_isbn10" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_isbn13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_isbn13" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_pdf417"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_pdf417" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_qrcode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/codetype_qrcode" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_upca"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/codetype_upca" />
 
-                <cn.simonlee.demo.xcodescanner.RadioButton
+                <cn.dalelegamalek.demo.xcodescanner.RadioButton
                     android:id="@+id/main_radio_codetype_upce"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

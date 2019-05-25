@@ -7,11 +7,11 @@
 
     <include layout="@layout/layout_toolbar" />
 
-    <cn.simonlee.xcodescanner.view.MaskConstraintLayout
+    <cn.dalelegamalek.xcodescanner.view.MaskConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <cn.simonlee.xcodescanner.view.AdjustTextureView
+        <cn.dalelegamalek.xcodescanner.view.AdjustTextureView
             android:id="@+id/textureview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -44,7 +44,7 @@
         <!--android:background="@color/colorAccent"-->
         <!--app:layout_constraintBottom_toTopOf="@id/textureview"/>-->
 
-        <cn.simonlee.xcodescanner.view.ScannerFrameView
+        <cn.dalelegamalek.xcodescanner.view.ScannerFrameView
             android:id="@+id/scannerframe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,5 +80,5 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
-    </cn.simonlee.xcodescanner.view.MaskConstraintLayout>
+    </cn.dalelegamalek.xcodescanner.view.MaskConstraintLayout>
 </LinearLayout>
