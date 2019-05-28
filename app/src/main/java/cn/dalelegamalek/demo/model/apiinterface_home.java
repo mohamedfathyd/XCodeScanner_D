@@ -10,9 +10,9 @@ import retrofit2.http.POST;
 public interface apiinterface_home {
 
     @FormUrlEncoded
-    @POST("Gmalek_user_service_provider.php")
+    @POST("Gmalek_service_provider.php")
     Call<ResponseBody> getcontacts(@Field("name") String name, @Field("password") String password, @Field("address") String address, @Field("phone") String phone,
-                                   @Field("date") String date, @Field("email") String email, @Field("image") String image,@Field("categry")int category
+                                   @Field("date") String date, @Field("email") String email, @Field("image") String image,@Field("category")int category
     );
     @FormUrlEncoded
     @POST("Gmalek_login_service_provider.php")

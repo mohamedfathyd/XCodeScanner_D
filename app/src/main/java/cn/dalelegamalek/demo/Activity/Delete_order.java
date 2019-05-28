@@ -51,10 +51,6 @@ public class Delete_order extends AppCompatActivity {
         name = intent.getStringExtra("name");
         id = intent.getIntExtra("id", 0);
 
-
-        textView.setText(name);
-
-
         this.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_chevron_right_black_24dp);
         setSupportActionBar(toolbar);
