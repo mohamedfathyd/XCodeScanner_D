@@ -22,7 +22,7 @@ public class contact_order {
     @SerializedName("phone")
     String phone;
     @SerializedName("price")
-    String price;
+    Double price;
     @SerializedName("points")
     int points;
     @SerializedName("likes")
@@ -102,11 +102,11 @@ public class contact_order {
         this.phone = phone;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

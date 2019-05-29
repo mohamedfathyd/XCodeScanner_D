@@ -152,7 +152,7 @@ profile.setOnClickListener(new View.OnClickListener() {
         Call<ResponseBody> call = apiinterface.getcontactsadd(textInputEditTextname.getText().toString(),
                category, id
                 ,textInputEditTextdetails.getText().toString(),spncontry.getSelectedItem().toString(),spn.getSelectedItem().toString(),
-                textInputEditTextphone.getText().toString(), Integer.parseInt(textInputEditTextprice.getText().toString()), Integer.parseInt(textInputEditTextpoints.getText().toString()),textInputEditTextaddress.getText().toString(),
+                textInputEditTextphone.getText().toString(), Double.valueOf(textInputEditTextprice.getText().toString()), Integer.parseInt(textInputEditTextpoints.getText().toString()),textInputEditTextaddress.getText().toString(),
                 image);
         call.enqueue(new Callback<ResponseBody>() {
             @Override

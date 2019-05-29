@@ -5,6 +5,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface apiinterface_home {
@@ -22,7 +23,7 @@ public interface apiinterface_home {
     Call<ResponseBody> getcontactsadd(@Field("name") String name, @Field("category") int category,
                                       @Field("service_provider_id") int service_provider_id,
                                       @Field("details") String details,
-                                   @Field("country") String country, @Field("city") String city, @Field("phone") String phone, @Field("price") int price,
+                                   @Field("country") String country, @Field("city") String city, @Field("phone") String phone, @Field("price") Double price,
                                       @Field("points") int points, @Field("address") String address,@Field("image") String image
     );
     @FormUrlEncoded
@@ -37,6 +38,7 @@ public interface apiinterface_home {
     @FormUrlEncoded
     @POST("Gamalek_pull_point.php")
     Call<ResponseBody> getcontacts_send(@Field("id") int id,@Field("id_sender") int id_sender , @Field("points")int points);
-
+    @GET("Gmalek_first_category.php")
+    Call<List<content_category>> getcontacts_allfirst();
 }
 

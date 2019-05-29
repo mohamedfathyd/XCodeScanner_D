@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/spin"
             android:entries="@array/account_num"
             ></android.support.v7.widget.AppCompatSpinner>
         <!-- Name Label -->
@@ -154,7 +155,12 @@
                 android:inputType="textPassword"
                 android:hint="تأكيد كلمة المرور"/>
         </android.support.design.widget.TextInputLayout>
-
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:id="@+id/categoryid"
+            android:visibility="gone"
+            />
         <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_signup"

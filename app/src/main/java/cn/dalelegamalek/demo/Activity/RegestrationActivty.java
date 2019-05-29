@@ -1,17 +1,22 @@
 package cn.dalelegamalek.demo.Activity;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatSpinner;
 import android.util.Base64;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,9 +24,12 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.List;
 
+import cn.dalelegamalek.demo.FragmentImage;
 import cn.dalelegamalek.demo.model.apiinterface_home;
 import cn.dalelegamalek.demo.model.Apiclient_home;
+import cn.dalelegamalek.demo.model.content_category;
 import cn.simonlee.demo.xcodescanner.R;
 import me.anwarshahriar.calligrapher.Calligrapher;
 import okhttp3.ResponseBody;
@@ -36,28 +44,37 @@ public class RegestrationActivty extends AppCompatActivity {
     EditText textInputEditTextname,textInputEditTextaddress,textInputEditTextphone,textInputEditTextcountry,textInputEditTextage,
             textInputEditTextpassword,textInputEditTextconfirmpassword,textInputEditTextr,textInputEditTextmail;
     AppCompatButton regesiter;
+    TextView categoryid;
     TextView openlogin;
-
+    AppCompatSpinner spin;
     Call<ResponseBody> call = null;
     private apiinterface_home apiinterface;
     String code,mVerificationId;
     ProgressDialog progressDialog;
+    int ca;
     ImageView profile;
     ProgressDialog progressDialog1;
     //   login_ login_;
     String codee =null;
-
+Getcategry getcategry;
+    private List<content_category> contactList;
     Bitmap bitmap;
+    int []id;
     private  static final int IMAGE = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regestration_activty);
+        spin=findViewById(R.id.spin);
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "Droid.ttf", true);
 
 
+
+
+
         inisialize();
+        GfetchInfo();
 
         openlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +85,11 @@ public class RegestrationActivty extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectImage();
+                Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.addToBackStack(null);
+                DialogFragment dialogFragment = new FragmentImage();
+                dialogFragment.show(ft, "dialog");
             }
         });
         regesiter.setOnClickListener(new View.OnClickListener() {
@@ -98,9 +119,9 @@ public class RegestrationActivty extends AppCompatActivity {
                 } else if (!textInputEditTextconfirmpassword.getText().toString().equals(textInputEditTextpassword.getText().toString())) {
                     textInputLayoutconfirmpassword.setError("كلمة تأكيد مختلفة");
                 } else {
-
-
-                     fetchInfo();
+                  ca=spin.getSelectedItemPosition();
+                  int x=id[ca];
+                  fetchInfo(x);
                 }
             }
         });
@@ -109,17 +130,17 @@ public class RegestrationActivty extends AppCompatActivity {
     }
 
 
-    public void fetchInfo() {
+    public void fetchInfo(int ca) {
         progressDialog = ProgressDialog.show(RegestrationActivty.this, "جاري انشاء الحساب", "Please wait...", false, false);
         progressDialog.show();
-        String image = convertToString();
 
+          String image=categoryid.getText().toString();
 
         apiinterface = Apiclient_home.getapiClient().create(apiinterface_home.class);
         Call<ResponseBody> call = apiinterface.getcontacts(textInputEditTextname.getText().toString(),
                 textInputEditTextpassword.getText().toString(), textInputEditTextaddress.getText().toString()
                 ,textInputEditTextphone.getText().toString(),textInputEditTextage.getText().toString(),textInputEditTextmail.getText().toString(),
-                image,1);
+                image,ca);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -153,36 +174,43 @@ public class RegestrationActivty extends AppCompatActivity {
         regesiter = (AppCompatButton) findViewById(R.id.btn_signup);
         profile=findViewById(R.id.image);
         openlogin =  findViewById(R.id.link_login);
+        categoryid=findViewById(R.id.categoryid);
 
 
     }
-    private void selectImage() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, IMAGE);
-    }
-    private String convertToString()
-    {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,70,byteArrayOutputStream);
-        byte[] imgByte = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(imgByte, Base64.DEFAULT);
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode== IMAGE && resultCode==RESULT_OK && data!=null)
-        {
-            Uri path = data.getData();
 
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
-                profile.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
+    public void GfetchInfo(){
+        apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
+        Call<List<content_category>> call = apiinterface.getcontacts_allfirst();
+        call.enqueue(new Callback<List<content_category>>() {
+            @Override
+            public void onResponse(Call<List<content_category>> call, Response<List<content_category>> response) {
+                contactList = response.body();
+
+                if(!contactList.isEmpty()|| contactList.equals(null)){
+                    String []category = new String[contactList.size()];
+                    id = new int[contactList.size()];
+                    for(int i=0;i<contactList.size();i++){
+
+                        category[i]=contactList.get(i).getName();
+                        id[i]=contactList.get(i).getId();
+
+                    }
+
+                   ArrayAdapter<String> adpt_area = new ArrayAdapter<String>(RegestrationActivty.this,
+                            android.R.layout.simple_spinner_dropdown_item, category);
+                    spin.setAdapter(adpt_area);
+                }
+
+
             }
-        }
+
+            @Override
+            public void onFailure(Call<List<content_category>> call, Throwable t) {
+
+            }
+        });
+
     }
 }
