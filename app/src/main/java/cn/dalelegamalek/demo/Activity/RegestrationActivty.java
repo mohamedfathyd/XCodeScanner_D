@@ -186,23 +186,27 @@ Getcategry getcategry;
         call.enqueue(new Callback<List<content_category>>() {
             @Override
             public void onResponse(Call<List<content_category>> call, Response<List<content_category>> response) {
-                contactList = response.body();
+                try{
+                    contactList = response.body();
 
-                if(!contactList.isEmpty()|| contactList.equals(null)){
-                    String []category = new String[contactList.size()];
-                    id = new int[contactList.size()];
-                    for(int i=0;i<contactList.size();i++){
+                    if (!contactList.isEmpty() || contactList.equals(null)) {
+                        String[] category = new String[contactList.size()];
+                        id = new int[contactList.size()];
+                        for (int i = 0; i < contactList.size(); i++) {
 
-                        category[i]=contactList.get(i).getName();
-                        id[i]=contactList.get(i).getId();
+                            category[i] = contactList.get(i).getName();
+                            id[i] = contactList.get(i).getId();
 
+                        }
+
+                        ArrayAdapter<String> adpt_area = new ArrayAdapter<String>(RegestrationActivty.this,
+                                android.R.layout.simple_spinner_dropdown_item, category);
+                        spin.setAdapter(adpt_area);
                     }
-
-                   ArrayAdapter<String> adpt_area = new ArrayAdapter<String>(RegestrationActivty.this,
-                            android.R.layout.simple_spinner_dropdown_item, category);
-                    spin.setAdapter(adpt_area);
                 }
+                catch (Exception e){
 
+                }
 
             }
 

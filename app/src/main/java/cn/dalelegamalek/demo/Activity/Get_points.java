@@ -57,7 +57,7 @@ public class Get_points extends AppCompatActivity {
     public void fetchInfo() {
 
         apiinterface = Apiclient_home.getapiClient().create(apiinterface_home.class);
-        Call<ResponseBody> call = apiinterface.getcontacts_send(id,id_send,point);
+        Call<ResponseBody> call = apiinterface.getcontacts_send(id,id_send, Integer.parseInt(points.getText().toString()));
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

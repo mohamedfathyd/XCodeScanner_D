@@ -22,12 +22,12 @@
             android:id="@+id/image"
             android:background="@drawable/profile"
             android:layout_gravity="center_horizontal" />
+
         <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/spin"
-            android:entries="@array/account_num"
             ></android.support.v7.widget.AppCompatSpinner>
         <!-- Name Label -->
         <android.support.design.widget.TextInputLayout
@@ -116,7 +116,7 @@
                 android:gravity="center"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:hint="رقم الهاتف" />
         </android.support.design.widget.TextInputLayout>
 

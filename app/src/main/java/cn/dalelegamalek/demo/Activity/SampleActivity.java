@@ -67,7 +67,9 @@ public class SampleActivity extends AppCompatActivity {
            scan.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   startActivity(new Intent(SampleActivity.this, ScanActivity.class));
+                   Intent intent=new Intent(SampleActivity.this, AfterScan.class);
+                   intent.putExtra("result","1");
+                   startActivity(intent);
                }
            });
     }

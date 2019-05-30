@@ -82,17 +82,21 @@ TextView name, phone, point;
         apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
         Call<List<contact_home>> call= apiinterface.getcontacts_getuser(idd);
         call.enqueue(new Callback<List<contact_home>>() {
-            @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
+
             @Override
             public void onResponse(Call<List<contact_home>> call, Response<List<contact_home>> response) {
-                if(response.isSuccessful()){
+try {
+    if (response.isSuccessful()) {
 
-                    contactList = response.body();
-                    name.setText(contactList.get(0).getName());
-                    phone.setText(contactList.get(0).getPhone());
-                    point.setText(contactList.get(0).getPoints());
-                }
+        contactList = response.body();
+        name.setText(contactList.get(0).getName());
+        phone.setText(contactList.get(0).getPhone());
+        point.setText(contactList.get(0).getPoints() + "");
+    }
+}catch (Exception e){
+    Toast.makeText(AfterScan.this,"هناك خطأ حدث اعد المحاولة لاحقا ",Toast.LENGTH_LONG).show();
 
+}
             }
 
             @Override
