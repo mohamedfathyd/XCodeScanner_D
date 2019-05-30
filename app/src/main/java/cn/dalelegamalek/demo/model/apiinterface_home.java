@@ -36,7 +36,7 @@ public interface apiinterface_home {
     @POST("montag/dallejamalk/Gmalek_get_user.php")
     Call<List<contact_home>>getcontacts_getuser(@Field("id") int id);
     @FormUrlEncoded
-    @POST("Gamalek_pull_point.php")
+    @POST("montag/dallejamalk/Gamalek_pull_point.php")
     Call<ResponseBody> getcontacts_send(@Field("id") int id,@Field("id_sender") int id_sender , @Field("points")int points);
     @GET("montag/dallejamalk/Gmalek_first_category.php")
     Call<List<content_category>> getcontacts_allfirst();
