@@ -101,6 +101,9 @@ public class LoginActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
             @Override
             public void onResponse(Call<List<contact_home>> call, Response<List<contact_home>> response) {
+                try {
+
+
                 if(response.isSuccessful()){
 
                     contactList = response.body();
@@ -128,7 +131,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     progressDialog.dismiss();
                 }
+                }catch (Exception e){
+                    Toast.makeText(LoginActivity.this,"لم يتم تأكيد الحساب بعد ",Toast.LENGTH_LONG).show();
 
+                }
             }
 
             @Override
