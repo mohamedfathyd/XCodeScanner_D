@@ -11,7 +11,7 @@ android {
         versionName "1.1.10"
         ndk {
 //          此处可指定ABI，显著减小APK体积。不指定则默认编译所有平台so库
-            abiFilters "armeabi-v7a"
+            abiFilters "armeabi-v7a","x86"
         }
     }
     buildTypes {
