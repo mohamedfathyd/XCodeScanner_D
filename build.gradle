@@ -1,5 +1,9 @@
 buildscript {
-
+    configurations.all {
+        resolutionStrategy {
+            force 'net.sf.proguard:proguard-gradle:5.3.3'
+        }
+    }
     repositories {
         google()
         jcenter()

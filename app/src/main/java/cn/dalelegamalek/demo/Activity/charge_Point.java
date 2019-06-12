@@ -78,7 +78,7 @@ public class charge_Point extends AppCompatActivity {
     public void fetchInfo(final int pointt) {
 
         apiinterface = Apiclient_home.getapiClient().create(apiinterface_home.class);
-        Call<ResponseBody> call = apiinterface.getcontacts_send(id,id_send,pointt);
+        Call<ResponseBody> call = apiinterface.getcontacts_send_(id,id_send,pointt);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

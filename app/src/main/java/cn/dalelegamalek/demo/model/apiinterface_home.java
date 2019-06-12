@@ -40,5 +40,9 @@ public interface apiinterface_home {
     Call<ResponseBody> getcontacts_send(@Field("id") int id,@Field("id_sender") int id_sender , @Field("points")int points);
     @GET("montag/dallejamalk/Gmalek_first_category.php")
     Call<List<content_category>> getcontacts_allfirst();
+    @FormUrlEncoded
+    @POST("montag/dallejamalk/Gmalek_charge_point.php")
+    Call<ResponseBody> getcontacts_send_(@Field("id") int id,@Field("id_sender") int id_sender , @Field("points")int points);
+
 }
 

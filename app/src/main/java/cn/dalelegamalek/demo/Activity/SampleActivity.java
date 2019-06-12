@@ -67,7 +67,7 @@ public class SampleActivity extends AppCompatActivity {
            scan.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                  startActivity(new Intent(SampleActivity.this,ScanActivity.class));
+                  startActivity(new Intent(SampleActivity.this,QrScanner.class));
                }
            });
     }
