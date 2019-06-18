@@ -7,8 +7,8 @@ android {
         applicationId "cn.dalelegamalek.demo.xcodescanner"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 20
-        versionName "1.1.10"
+        versionCode 22
+        versionName "1.1.12"
         ndk {
 //          此处可指定ABI，显著减小APK体积。不指定则默认编译所有平台so库
             abiFilters "armeabi-v7a", "x86"

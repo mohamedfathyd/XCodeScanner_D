@@ -23,6 +23,7 @@ public class SampleActivity extends AppCompatActivity {
     String name,age,address,phone,image,mail;
     private SharedPreferences sharedpref;
     int id,points,category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
